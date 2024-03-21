@@ -1,0 +1,6 @@
+transformers
+tensorflow
+tf-keras
+fastapi
+uvicorn[standard]
+python-multipart
