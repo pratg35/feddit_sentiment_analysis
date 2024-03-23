@@ -16,23 +16,29 @@ pip install -r requirements.txt
 Usage:
 
 1. Start the FastAPI application:
-
-
-uvicorn app.main:app --reload
+   ```bash
+   uvicorn app.main:app --reload
+   
 2. Access the API documentation at http://localhost:8000/docs to view available endpoints and test the API.
 
 Endpoints
 
-/comments/{subreddit}: Get the most recent 25 comments from the specified subreddit.
+   #### GET /get_sentiments : Gets most recent feddit comments with the sentiment score.
 
-Parameters:
-subreddit: Name of the subreddit (e.g., "python").
-Response:
-List of comments with their unique identifiers, text, polarity scores, and classifications.
+#### Parameters:
 
-Additional Information
+    feddit_id: feddit Id for comments.
+  
+    limit: top number of rows.
+  
+    skip: skip
+  
+#### Response:
 
-The sentiment analysis logic can be found in app.sentiment_analysis.py.
-For more details, refer to the FastAPI documentation: https://fastapi.tiangolo.com/
-sql
-Copy code
+    List of comments with their unique identifiers, text, polarity scores, and classifications.
+
+Additional Information:
+
+The sentiment analysis logic can be found in src/main.py.
+
+For more details email to : pratgupta35@gmail.com
