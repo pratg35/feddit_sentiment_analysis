@@ -12,7 +12,7 @@ class Sentiment:
         payload = {}
         headers = {}
         response = requests.request("GET", url, headers=headers, data=payload)
-        # print(response.json())
+        print(response.json())
         results=response.json()
         return results
 
@@ -22,8 +22,11 @@ class Sentiment:
         text=[i['text'] for i in results['comments']]
         sent=self.tf_obj(text)
         # print(sent)
-        for i in range(len(results)):
-            results['comments'][i].update(sent[i])
+        for i in range(len(results.get("comments"))):
+            # results['comments'][i].update(sent[i])
+            results['comments'][i]["label"]=sent[i]["label"]
+            results['comments'][i]["score"]=sent[i]["score"]
+            # print(results['comments'][i])
         return results['comments']
 
 if __name__=='__main__':
