@@ -40,5 +40,8 @@ Endpoints
 Additional Information:
 
 The sentiment analysis logic can be found in src/main.py.
+Each API call has a unique request_id that can be mapped back to logs for monitoring
+
+
 
 For more details email to : pratgupta35@gmail.com
